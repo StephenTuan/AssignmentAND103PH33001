@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">Healthy Mart</string>
+    <string name="app_name_splash">Healthy mart</string>
+    <string name="app_logo_description">Logo ứng dụng</string>
+
+    <string name="search_hint">Bạn muốn tìm gì?</string>
+    <string name="see_all">Xem tất cả</string>
+    <string name="add_to_cart">Thêm vào giỏ</string>
+    <string name="add_to_favorite">Thêm vào Yêu thích</string>
+    <string name="description">Mô tả</string>
+    <string name="rupees_symbol">đ</string>
+    <string name="sample_price">14.295</string>
+    <string name="sample_quantity_grams">500 g</string>
+    <string name="back_button_desc">Nút quay lại</string>
+    <string name="user_avatar_desc">Ảnh đại diện người dùng</string>
+    <string name="search_icon_desc">Icon tìm kiếm</string>
+    <string name="product_image_desc">Hình ảnh sản phẩm</string>
+    <string name="favorite_icon_desc">Icon yêu thích</string>
+    <string name="remove_item_desc">Xóa bớt sản phẩm</string>
+    <string name="add_item_desc">Thêm sản phẩm</string>
+
+    <string name="welcome_to">Chào mừng đến</string>
+    <string name="healthy_mart">Healthy mart</string>
+    <string name="banner_text">Giảm 30% cho đơn hàng đầu tiên</string>
+    <string name="category_all">Tất cả</string>
+    <string name="category_vegetables">Rau củ</string>
+    <string name="category_fruits">Trái cây</string>
+    <string name="category_meats">Thịt</string>
+    <string name="fresh_fruits_title">Trái cây tươi</string>
+    <string name="sample_fruit_name_1">Cam tươi</string>
+    <string name="sample_fruit_name_2">Dâu tây</string>
+
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_orders">Đơn hàng</string>
+    <string name="nav_cart">Giỏ hàng</string>
+    <string name="nav_profile">Hồ sơ</string>
+
+    <string name="sample_product_name_detail">Cam hữu cơ</string>
+    <string name="sample_rating_reviews">4.2 (98 đánh giá)</string>
+    <string name="sample_product_description">Cam là một loại trái cây thuộc họ cam quýt (Rutaceae). Nó chủ yếu đề cập đến Citrus sinensis, còn được gọi là cam ngọt, để phân biệt với Citrus aurantium có liên quan.</string>
+    <string name="read_more">Xem thêm</string>
+
+    <string name="complete_your_profile_title">Hoàn tất hồ sơ của bạn</string>
+    <string name="hint_fullname">Họ và Tên</string>
+    <string name="hint_username">Tên người dùng</string>
+    <string name="hint_dob">DD/MM/YYYY</string>
+    <string name="hint_phone_number">(222) XXX-XXXX</string>
+    <string name="button_complete_profile">Hoàn tất hồ sơ</string>
+    <string name="camera_icon_desc">Icon máy ảnh</string>
+    <string name="edit_icon_desc">Icon chỉnh sửa</string>
+    <string name="flag_icon_desc">Icon lá cờ</string>
+
+    <string name="create_your_account">SIGN UP</string>
+    <string name="email_address">Email</string>
+    <string name="password">Password</string>
+    <string name="create_account_button">Create an account</string>
+    <string name="or_signup_with">-------------- or ---------------</string>
+    <string name="already_have_account">Đã có tài khoản?</string>
+    <string name="login_link">Login</string>
+    <string name="google_icon_desc">Login with Google</string>
+    <string name="facebook_icon_desc">Login with Facebook</string>
+    <string name="apple_icon_desc">Login with Apple</string>
+
+    <string name="login_to_your_account">LOGIN</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="sign_in_button">Login</string>
+    <string name="dont_have_account">Chưa có tài khoản?</string>
+    <string name="create_new_account_link">Create an account</string>
+
+</resources>

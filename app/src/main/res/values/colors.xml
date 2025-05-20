@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green_dam">#008000</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="green_500">#4CAF50</color>
+    <color name="green_300">#81C784</color>
+
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_500">#9E9E9E</color>
+
+    <color name="text_color_primary">#212121</color>
+    <color name="text_color_secondary">#757575</color>
+
+    <color name="green_dark">#0A5C2F</color>
+    <color name="green_primary">#4CAF50</color>
+    <color name="green_light">#81C784</color>
+    <color name="green_banner">#E8F5E9</color>
+    <color name="green_icon_background">#DCEDC8</color>
+
+    <color name="grey_background">#F5F5F5</color>
+    <color name="grey_text_light">#757575</color>
+    <color name="grey_text_dark">#424242</color>
+    <color name="grey_divider">#E0E0E0</color>
+
+    <color name="orange_price">#FF9800</color>
+
+    <color name="red_heart">#F44336</color>
+
+    <color name="yellow_star">#FFEB3B</color>
+
+
+</resources>
