@@ -62,27 +62,27 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email = emailEditText.getText().toString().trim();
-                password = passwordEditText.getText().toString().trim();
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Vui lòng không để trống thông tin", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                mAuth.signInWithEmailAndPassword(email,password)
-                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    FirebaseUser user = mAuth.getCurrentUser();
+//                email = emailEditText.getText().toString().trim();
+//                password = passwordEditText.getText().toString().trim();
+//                if (email.isEmpty() || password.isEmpty()) {
+//                    Toast.makeText(getApplicationContext(), "Vui lòng không để trống thông tin", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                mAuth.signInWithEmailAndPassword(email,password)
+//                        .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<AuthResult> task) {
+//                                if (task.isSuccessful()) {
+//                                    FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(getApplicationContext(), "Login successfull!!!", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class); // Giả sử bạn có HomeActivity
                                     startActivity(intent);
-                                } else {
-                                    String errorMessage = task.getException().getMessage();
-                                    Toast.makeText(getApplicationContext(), "Login fail: " + errorMessage, Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+//                                } else {
+//                                    String errorMessage = task.getException().getMessage();
+//                                    Toast.makeText(getApplicationContext(), "Login fail: " + errorMessage, Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        });
             }
         });
 

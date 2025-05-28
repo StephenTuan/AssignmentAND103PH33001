@@ -206,13 +206,11 @@
                 android:id="@+id/fruits_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_fruit"
                 android:layout_marginTop="8dp"
+                android:clipToPadding="false"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp"
-                android:clipToPadding="false"/>
+                tools:listitem="@layout/item_fruit"/>
 
         </LinearLayout>
     </ScrollView>

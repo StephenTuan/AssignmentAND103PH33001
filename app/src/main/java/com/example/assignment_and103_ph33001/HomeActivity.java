@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -22,8 +24,8 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.OnFr
     private RecyclerView fruitsRecyclerView;
     private FruitAdapter fruitAdapter;
     private List<FruitItem> fruitItemList;
-
     private Button categoryAll, categoryVegetables, categoryFruits, categoryMeats;
+    ImageView userAvatar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.OnFr
         setContentView(R.layout.activity_main);
 
         fruitsRecyclerView = findViewById(R.id.fruits_recyclerview);
+        userAvatar = findViewById(R.id.user_avatar);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.nav_home_bottom); // Đặt item Home là được chọn
 
@@ -61,6 +65,14 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.OnFr
                 return true;
             }
             return false;
+        });
+
+        userAvatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class); // Giả sử bạn có HomeActivity
+                startActivity(intent);
+            }
         });
     }
 
@@ -99,9 +111,8 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.OnFr
 
     private void setupRecyclerView() {
         fruitItemList = new ArrayList<>();
-        // Sử dụng this vì HomeActivity implement OnFruitItemClickListener
+        fruitsRecyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         fruitAdapter = new FruitAdapter(this, fruitItemList, this);
-        fruitsRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         fruitsRecyclerView.setAdapter(fruitAdapter);
     }
 
@@ -141,4 +152,6 @@ public class HomeActivity extends AppCompatActivity implements FruitAdapter.OnFr
         // Bạn có thể truyền thêm các thông tin khác nếu cần
         startActivity(intent);
     }
+
+
 }
