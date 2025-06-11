@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.assignment_and103_ph33001.Model.FruitItem;
 import com.example.assignment_and103_ph33001.R;
+import com.example.assignment_and103_ph33001.handle.Item_User_handle;
 
 import java.util.List;
 
@@ -22,6 +24,8 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
 
     private List<FruitItem> fruitList;
     private Context context;
+
+    private Item_User_handle handle;
 
     public interface OnFruitItemClickListener {
         void onFruitItemClick(FruitItem item);
@@ -46,27 +50,26 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
     public void onBindViewHolder(@NonNull FruitViewHolder holder, int position) {
         FruitItem currentItem = fruitList.get(position);
 
-        holder.fruitName.setText(currentItem.getName());
-        holder.fruitPrice.setText(currentItem.getPrice() + " " + context.getString(R.string.rupees_symbol));
-        holder.fruitWeight.setText(currentItem.getWeight());
-        holder.fruitImage.setImageResource(currentItem.getImageResourceId());
+        holder.nameFruist.setText(currentItem.getNameFruist());
+        holder.priceFruist.setText(currentItem.getPriceFruist());
+        holder.rateFruist.setText(currentItem.getRateFruist());
 
         // Cập nhật icon yêu thích
-        if (currentItem.isFavorite()) {
-            holder.favoriteIcon.setImageResource(R.drawable.heartfill); // Cần tạo icon này
-        } else {
-            holder.favoriteIcon.setImageResource(R.drawable.heart);
-        }
-
-        holder.favoriteIcon.setOnClickListener(v -> {
-            currentItem.setFavorite(!currentItem.isFavorite());
-            notifyItemChanged(position); // Cập nhật lại item để thay đổi icon
-            String message = currentItem.isFavorite() ? "Đã thêm vào yêu thích" : "Đã xóa khỏi yêu thích";
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-        });
+//        if (currentItem.isFavorite()) {
+//            holder.favoriteIcon.setImageResource(R.drawable.heartfill); // Cần tạo icon này
+//        } else {
+//            holder.favoriteIcon.setImageResource(R.drawable.heart);
+//        }
+//
+//        holder.favoriteIcon.setOnClickListener(v -> {
+//            currentItem.setFavorite(!currentItem.isFavorite());
+//            notifyItemChanged(position); // Cập nhật lại item để thay đổi icon
+//            String message = currentItem.isFavorite() ? "Đã thêm vào yêu thích" : "Đã xóa khỏi yêu thích";
+//            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+//        });
 
         holder.addToCartButton.setOnClickListener(v -> {
-            Toast.makeText(context, currentItem.getName() + " đã được thêm vào giỏ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, currentItem.getNameFruist() + " đã được thêm vào giỏ", Toast.LENGTH_SHORT).show();
             // Xử lý logic thêm vào giỏ hàng ở đây
         });
 
@@ -75,6 +78,9 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
                 listener.onFruitItemClick(currentItem);
             }
         });
+
+        holder.btnEdit.setOnClickListener(v -> handle.onEdit(position));
+        holder.btnDelete.setOnClickListener(v -> handle.onDelete(position));
     }
 
     @Override
@@ -84,20 +90,19 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
 
     static class FruitViewHolder extends RecyclerView.ViewHolder {
         ImageView fruitImage;
-        ImageView favoriteIcon;
-        TextView fruitName;
-        TextView fruitWeight;
-        TextView fruitPrice;
-        ImageButton addToCartButton;
+//        ImageView favoriteIcon;
+        TextView nameFruist, id_category, distributorFruist, priceFruist, descriptionFruist, rateFruist;
+        ImageButton addToCartButton, btnEdit, btnDelete;
 
         public FruitViewHolder(@NonNull View itemView) {
             super(itemView);
             fruitImage = itemView.findViewById(R.id.fruit_image);
-            favoriteIcon = itemView.findViewById(R.id.favorite_icon);
-            fruitName = itemView.findViewById(R.id.fruit_name);
-            fruitWeight = itemView.findViewById(R.id.fruit_weight);
-            fruitPrice = itemView.findViewById(R.id.fruit_price);
-            addToCartButton = itemView.findViewById(R.id.add_to_cart_button);
+//            favoriteIcon = itemView.findViewById(R.id.favorite_icon);
+            nameFruist = itemView.findViewById(R.id.fruit_name);
+            priceFruist = itemView.findViewById(R.id.fruit_price);
+            rateFruist = itemView.findViewById(R.id.fruit_rate);
+            btnEdit = itemView.findViewById(R.id.edit_button);
+            btnDelete = itemView.findViewById((R.id.delete_button));
         }
     }
 }
