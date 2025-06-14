@@ -13,6 +13,7 @@
     <string name="sample_quantity_grams">500 g</string>
     <string name="back_button_desc">Nút quay lại</string>
     <string name="user_avatar_desc">Ảnh đại diện người dùng</string>
+    <string name="add_fruit_desc">Thêm fruit mới</string>
     <string name="search_icon_desc">Icon tìm kiếm</string>
     <string name="product_image_desc">Hình ảnh sản phẩm</string>
     <string name="favorite_icon_desc">Icon yêu thích</string>

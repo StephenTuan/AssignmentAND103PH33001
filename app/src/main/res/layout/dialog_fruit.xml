@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etNameFruist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name Fruit"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/etId_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID Cate"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/etDistributorFruist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DistributorFruist"/>
+    <EditText
+        android:id="@+id/edPriceFruist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="PriceFruist"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/edRateFruist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rate"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/edDescriptionFruist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DescriptionFruist"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etImageFruist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Image URL"
+        android:inputType="textUri" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+
+    </LinearLayout>
+</LinearLayout>

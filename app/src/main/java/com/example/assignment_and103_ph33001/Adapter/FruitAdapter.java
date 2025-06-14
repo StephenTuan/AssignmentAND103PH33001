@@ -1,11 +1,9 @@
 package com.example.assignment_and103_ph33001.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,9 +12,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.assignment_and103_ph33001.Model.FruitItem;
 import com.example.assignment_and103_ph33001.R;
-import com.example.assignment_and103_ph33001.handle.Item_User_handle;
+import com.example.assignment_and103_ph33001.handle.Item_Fruit_handle;
 
 import java.util.List;
 
@@ -25,13 +24,19 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
     private List<FruitItem> fruitList;
     private Context context;
 
-    private Item_User_handle handle;
+    private Item_Fruit_handle handle;
 
     public interface OnFruitItemClickListener {
         void onFruitItemClick(FruitItem item);
     }
     private OnFruitItemClickListener listener;
 
+
+    public FruitAdapter(Context context, List<FruitItem> fruitList, Item_Fruit_handle handle) {
+        this.context = context;
+        this.fruitList = fruitList;
+        this.handle = handle;
+    }
 
     public FruitAdapter(Context context, List<FruitItem> fruitList, OnFruitItemClickListener listener) {
         this.context = context;
@@ -53,6 +58,17 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
         holder.nameFruist.setText(currentItem.getNameFruist());
         holder.priceFruist.setText(currentItem.getPriceFruist());
         holder.rateFruist.setText(currentItem.getRateFruist());
+        
+        // Load image from URL using Glide
+        if (currentItem.getImageFruist() != null && !currentItem.getImageFruist().isEmpty()) {
+            Glide.with(context)
+                    .load(currentItem.getImageFruist())
+                    .placeholder(R.drawable.ic_launcher_foreground) // Default placeholder
+                    .error(R.drawable.ic_launcher_foreground) // Error image
+                    .into(holder.fruitImage);
+        } else {
+            holder.fruitImage.setImageResource(R.drawable.ic_launcher_foreground);
+        }
 
         // Cập nhật icon yêu thích
 //        if (currentItem.isFavorite()) {
@@ -101,8 +117,9 @@ public class FruitAdapter extends RecyclerView.Adapter<FruitAdapter.FruitViewHol
             nameFruist = itemView.findViewById(R.id.fruit_name);
             priceFruist = itemView.findViewById(R.id.fruit_price);
             rateFruist = itemView.findViewById(R.id.fruit_rate);
+            addToCartButton = itemView.findViewById(R.id.add_to_cart_button);
             btnEdit = itemView.findViewById(R.id.edit_button);
-            btnDelete = itemView.findViewById((R.id.delete_button));
+            btnDelete = itemView.findViewById(R.id.delete_button);
         }
     }
 }

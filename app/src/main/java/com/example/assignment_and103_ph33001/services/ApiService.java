@@ -1,6 +1,7 @@
 package com.example.assignment_and103_ph33001.services;
 
 import com.example.assignment_and103_ph33001.Model.FruitItem;
+import com.example.assignment_and103_ph33001.Model.CateItem;
 import com.example.assignment_and103_ph33001.Model.Response;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ import retrofit2.http.Path;
 
 public interface ApiService {
     public static String BASE_URl = "http://10.0.2.2:3000/";
-    @GET("api/list")
+    @GET("api/list_fruist")
     Call<Response<ArrayList<FruitItem>>> getListFruist();
 
     @POST("api/add_fruist")
@@ -26,5 +27,13 @@ public interface ApiService {
 
     @DELETE("api/delete_fruist/{id}")
     Call<Response<Void>> deleteFruist(@Path("id") String id);
+
+    @GET("api/list_cate")
+    Call<Response<ArrayList<CateItem>>> getListCategories();
+    @GET("api/detail_fruistdetail_fruist/{id}")
+    Call<Response<ArrayList<CateItem>>> getDetailFruist();
+
+    @GET("api/fruist_of_cate/{categoryId}")
+    Call<Response<ArrayList<FruitItem>>> getFruitsByCategory(@Path("categoryId") String categoryId);
 
 }
